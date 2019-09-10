@@ -2,7 +2,8 @@
 
 #gooi
 # Making directories recursively, and change the user & group & permission based on parent directory
-# ./mkdirre.sh /path/1/data/storage/project/development/type/address
+
+# ./script.sh /path/1/data/storage/project/development/type/address
 
 
 # -e enable interpretation of backslash escapes.
@@ -17,7 +18,7 @@ pwd
 echo -e "Capture user & group for path/1/data"
 user=$(ls -ld /path/1/data | awk '{print $3}')
 group=$(ls -ld /path1/data | awk '{print $4}')
-permission=$(ls -ld /path/1/data | awk
+permission=$(ls -ld /path/1/data | awk '{print $5}')
 sudo chmod -R 775 /path/1/data
 sudo chown -R $user:$group /path/1/data 
 
